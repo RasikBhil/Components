@@ -4,6 +4,7 @@ import Input from './Input';
 import Card from './Card';
 import Image from './Image';
 import Button from './Button';
+import Header from './Header';
 // import BackGroundImage from './BackGround';
 export {
   Box,
@@ -14,4 +15,5 @@ export {
   Card,
   Image,
   Button,
+  Header,
 };
