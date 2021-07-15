@@ -1,3 +1,3 @@
 import Home from './Home';
-
-export {Home};
+import TextComponents from "./TextComponents";
+export {Home, TextComponents};

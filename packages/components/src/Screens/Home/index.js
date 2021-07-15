@@ -13,11 +13,11 @@ import {
 } from '../../components';
 import {useTheme} from '@react-navigation/native';
 
-const App = () => {
+const App = ({navigation}) => {
   const theme = useTheme();
   return (
     <Box as={SafeAreaView}>
-      <Header />
+      <Header navigation={navigation} />
       <Box as={ScrollView}>
         <Box p={20}>
           <HeadingText color={theme.colors.text}>Heading Text</HeadingText>

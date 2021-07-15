@@ -12,6 +12,7 @@ const appIncludes = [
     resolveApp('../components/src'),
     resolveApp('../mobile/src'),
     resolveApp('../../node_modules/@react-navigation'),
+    resolveApp('../node_modules/@react-navigation/drawer'),
     resolveApp('../../node_modules/react-navigation'),
     resolveApp('../../node_modules/react-native-uncompiled'),
     resolveApp('../../node_modules/react-native-elements'),
@@ -22,6 +23,7 @@ const appIncludes = [
     resolveApp('../../node_modules/react-native-vector-icons'),
     resolveApp('../components/libraries/MSALAuthLogin'),
     resolveApp('../../node_modules/react-native-vector-icons'),
+    resolveApp('../../node_modules/react-native-reanimated')
 
 ]
 

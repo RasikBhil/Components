@@ -1,15 +1,16 @@
 import React, {useEffect} from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
+import  {createDrawerNavigator} from '@react-navigation/drawer';
 import {StatusBar} from 'react-native';
-import {Home} from '../Screens';
+import {Home, TextComponents} from '../Screens';
 import {dark, light} from '../theme';
 import {connect} from 'react-redux';
 
 const Stack = createStackNavigator();
+const Drawer = createDrawerNavigator();
 
 const Navigator = ({theme}) => {
-  // const theme = useSelector(({app}) => app.theme);
   console.log('theme', theme);
   useEffect(() => {
     if (theme === 'dark') {
@@ -18,13 +19,17 @@ const Navigator = ({theme}) => {
     if (theme === 'light') {
       StatusBar.setBarStyle('dark-content', false);
     }
-    // StatusBar.setBackgroundColor('da')
   }, [theme]);
   return (
     <NavigationContainer theme={theme === 'light' ? light : dark}>
-      <Stack.Navigator headerMode="none">
-        <Stack.Screen name={'/home'} component={Home} />
-      </Stack.Navigator>
+      <Drawer.Navigator drawerContentOptions={{
+        labelStyle: {
+          color: theme === 'light' ? light.colors.text : dark.colors.text
+        }
+      }} headerMode="none">
+        <Drawer.Screen name={'Home'} component={Home} />
+        <Drawer.Screen name={'TextComponents'} component={TextComponents} />
+      </Drawer.Navigator>
     </NavigationContainer>
   );
 };
